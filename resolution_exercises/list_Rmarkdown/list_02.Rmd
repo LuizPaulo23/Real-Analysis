@@ -1,0 +1,212 @@
+---
+title: 'Lista 2: Análise Real - Instituto de Matemática e Estatística - Universidade de São Paulo (IME-USP)'
+author: "Luiz Paulo Tavares Gonçalves"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+### 2. Prove usando a definição de limite
+
+### a) $(a_{n}) \to 7, a_{n} = 7- \frac{1}{\sqrt{n}}$
+
+Pela definição temos que: 
+
+
+$$
+| a_{n} - L| < \epsilon,  \forall \epsilon > 0
+$$
+Então: 
+
+$$
+| a_{n} - 7 | < \epsilon
+$$
+$$
+| a_{n} - 7 | = | (7-\frac{1}{\sqrt{n}}) - 7| < \epsilon
+$$
+
+
+$$
+|a_{n} - 7| = | - \frac{1}{\sqrt{n}}| = \frac{1}{\sqrt{n}} < \epsilon
+$$
+Multiplicando ambos os lados por $\sqrt{n}$: 
+
+$$
+\frac{1}{\sqrt{n}} \sqrt{n} < \epsilon \sqrt{n}
+$$
+$$
+1 < \epsilon \sqrt{n}
+$$
+Dividindo ambos os lados por $\epsilon$: 
+
+$$
+\frac{1}{\epsilon}< \frac{\epsilon \sqrt{n}}{\epsilon}
+$$
+$$
+\frac{1}{\epsilon}< \sqrt{n}
+$$
+Agora, elevando ambos os lados ao quadrado: 
+
+$$
+(\frac{1}{\epsilon})^2< (\sqrt{n})^2
+$$
+Portanto, para garantir que $|a_{n} - 7| < \epsilon$ basta escolher $n$ tal que: 
+
+$$
+n > \frac{1}{\epsilon^2}
+$$
+\newpage
+
+### b) $(a_{n} \to \frac{2}5), a_{n} = \frac{2n-2}{5n-1}$
+
+
+$$
+|a_{n} - L| < \epsilon
+$$
+$$
+|a_{n} - \frac{2}{5}| < \epsilon, \forall \epsilon > 0
+$$
+
+
+$$
+ |a_{n} - \frac{2}{5}| = |(\frac{2n-2}{5n-1})-\frac{2}{5}| = \frac{2n-2}{5n-1} < \epsilon
+$$
+
+Abrindo, temos: 
+
+$$
+\frac{5(2n-2) - 2(5n-1)}{5(5n-1)} = \frac{10n - 10 - (10n -2)}{5(5n-1)} = |\frac{-8}{5(5n-1)}|
+$$
+Portanto: 
+
+$$
+\frac{8}{5(5n-1)} < \epsilon
+$$
+Vamos multiplicar ambos os lados por $5(5n-1)$: 
+
+$$
+\frac{8}{5(5n-1)} 5(5n-1) < \epsilon 5(5n-1)
+$$
+
+
+$$
+8 < \epsilon 5(5n-1) 
+$$
+$$
+\frac{8}{\epsilon 5} < \frac{\epsilon 5(5n-1) }{\epsilon 5} 
+$$
+
+$$
+\frac{8}{\epsilon 5} < 5n-1 
+$$
+$$
+\frac{8}{\epsilon 5} +1 < 5n-1 +1
+$$
+$$
+\frac{8}{\epsilon 5} +1 < 5n
+$$
+
+
+
+$$
+\frac{\frac{8}{\epsilon 5} +1 }{5} < \frac{5n}{5}
+$$
+
+Portanto, para garantir que $|a_{n} - \frac{2}{5}| < \epsilon$ basta escolher $n$ tal que: 
+
+$$
+\frac{\frac{8}{\epsilon 5} +1 }{5} < n
+$$
+
+\newpage
+
+### 3. Dê um exemplo de uma sequência $(a_{n})$ onde $a_{n} < 0$, $\forall n \in \mathbb{N}$ e $(a_{n}) \to 0$
+
+
+Podemos tomar como exemplo: 
+
+$$
+a_{n} = - \frac{1}{n} < 0; \forall n \in \mathbb{N}
+$$
+Para verificar, vamos tomar n = 1 e depois com n suficientemente grande: 
+
+$$
+a_{n} = -\frac{1}{1} = -1
+$$
+$$
+a_{n} = -\frac{1}{1000} = -0,001
+$$
+De forma geral, considerando que conhecemos o conceito de limite: 
+
+$$
+\lim_{n \to \infty} a_n = \lim_{n \to \infty} \left( -\frac{1}{n} \right) = 0
+$$
+Portanto, temos a sequência $(a_{n})$ onde $a_{n} < 0$, $\forall n \in \mathbb{N}$ e $(a_{n}) \to 0$
+
+
+\newpage
+
+### 4. Seja $(x_{n})$ uma sequência tal que as subsequências $(x_{2n})$ e $(x_{2n-1})$ ambas convergem para L. Mostre que $(x_{n})$ converge para L
+
+Sabemos que: 
+
+
+$$
+(x_{2n}) \to L \iff \forall \epsilon > 0, \exists n_{1} \in \mathbb{N}: n> n_{0} \Rightarrow | x_{2n} - L | < \epsilon
+$$
+$$
+(x_{2n-1}) \to L \iff \forall \epsilon > 0, \exists n_{2} \in \mathbb{N}: n > n_{0} \Rightarrow | x_{2n-1} - L| < \epsilon
+$$
+
+
+Podemos combinar  as duas condições (pares e ímpares, respectivamente, $x_{2n}$ e $x_{2n-1}$) para garantir que todos os $n$ que satisfazem $|x_{n} - L| < \epsilon$: 
+
+$$
+n_{0} = \max\{n_{1}, n_{2}\}
+$$
+Então: 
+
+$$
+n > n_{0} \Rightarrow |x_{2n} - L| < \epsilon \quad e  \quad |x_{2n-1} -  L | < \epsilon, \forall n \in \mathbb{N}
+$$
+$$
+\iff |x_{n} - L | < \epsilon, \forall n \in \mathbb{N}
+$$
+Segue que $x_{n} \to L$ 
+
+\newpage
+
+### 5. Sejam $(a_{n})$ e $(b_{n})$ duas sequências tais que $(a_{n})$ é limitada e $(b_{n})$ converge para $0$. Mostre que a sequência $(a_{n} b_{n})$ converge para $0$
+
+
+$$
+a_{n}, \exists M> 0 \quad \text{tal que} \quad |a_{n}| \leq M, \forall n
+$$
+
+$$
+b_{n} \to 0 \to \forall \epsilon > 0 \quad \exists N\in \mathbb{N} \quad \text{tal que } n > N, \quad \text{então:}
+$$
+$$
+|a_{n} b_{n} |< \epsilon
+$$
+
+
+Então: 
+
+$$
+|a_{n} b_{n} | \leq M |b_n|
+$$
+$$
+|b_n| < \frac{\epsilon}{M}
+$$
+Portanto: 
+
+$$
+|a_{n} b_{n} | \leq M |b_n| < M \frac{\epsilon}{M} = \epsilon
+$$
+
+Para qualquer $\epsilon > 0$, escolhemos $N_1 = N$ para garantir que, se $n > N_1$, então: 
+
+$$
+|a_n b_n| < \epsilon
+$$
+Isso mostra que $a_n, b_n \to 0$

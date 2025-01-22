@@ -1,0 +1,187 @@
+---
+title: 'Lista 1: Análise Real - Instituto de Matemática e Estatística - Universidade de São Paulo (IME-USP)'
+author: "Luiz Paulo Tavares Gonçalves"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 5. Dê um exemplo de uma função $f : \mathbb{N} \to \mathbb{N}$ que seja injetora mas não sobrejetora.
+
+Uma função $f : X \to Y$ é dita injetora se, e somente se, $f(x_{1}) = f(x_{2})$ implica em $x_{1} = x_{2}$. Formalmente:  
+
+$$
+\forall x_1, x_2 \in X, (f(x_1) = f(x_2) \implies x_1 = x_2)
+$$
+Por sua vez, uma função $f: X \to Y$ é sobrejetora se a imagem é igual ao contradomínio:  
+
+
+$$
+\forall y \in Y, \exists x \in X \text{ tal que } f(x) = y
+$$
+
+Então, podemos tomar a função como exemplo: 
+
+$$
+f(n) = n+1
+$$
+
+Se $f(x_{1}) = f(x_{2})$, então: 
+
+$$
+x_{1} + 1 = x_{2} + 1
+$$
+
+$$
+x_{1} + 1 -(1) = x_{2}+1 - (1)
+$$
+
+$$
+x_{1} = x_{2}
+$$
+
+Ou seja, se essas entradas diferentes resultam na mesma saída, a única maneira disso acontecer é se as entradas forem de fato iguais. Observe que, por exemplo, o valor 0 em $\mathbb{N}$ não é atingido pela função, pois nunca há um $n \in \mathbb{N}$ tal que $n+1 = 0$. Então, não é sobrejetora, pois a imagem é diferente do contradomínio. 
+
+\newpage
+
+### 6. Dê um exemplo de uma função $f : \mathbb{N} \to \mathbb{N}$ que seja sobrejetora mas não injetora.
+
+Podemos tomar a definição de função injetora e sobrejetora que foram dadas no exerícios anterior. Assim, podemos tomar a função como exemplo de não injetora: 
+
+
+$$
+f(n) =
+\begin{cases} 
+n, & \text{se \( n \) é ímpar,} \\
+\frac{n}{2}, & \text{se \( n \) é par.}
+\end{cases}
+$$
+A não "injetividade" dessa função é fácil de verificar. Observe que 2 é par e retorna (2/2 = 1), agora pegue 1 que, é ímpar, então, $f(2) = f(1) = 1$. Ou seja, entradas diferentes produziram a mesma saída. É não injetora! Assim como, todo número $y \in \mathbb{N}$ (seja ímpar ou par) pode ser obtido como saída de $f(n)$. Isso prova que $f$ é sobrejetora. 
+
+
+
+
+### 8. Prove por indução que, dados $x_{1},...,x_{n} \in \mathbb{R}$, tem-se
+
+
+$$
+| x_{1} + x_{2} + \cdots + x_{n}| \leq |x_{1}| + |x_{2}| + \cdots+ \ |x_{n}| 
+$$
+
+Base da indução, vamos tomar $k = 1$
+
+
+$$
+|x_{1}| \leq |x_{2}|
+$$
+Verificamos que com $k = 1$ é válido, agora, vamos levantar a hipótese com  $k = n$
+
+
+$$
+| x_{1} + x_{2} + \cdots + x_{n}| \leq |x_{1}| + |x_{2}| + \cdots+ \ |x_{n}| 
+$$
+
+Agora, precisamos provar: 
+
+$$
+| x_{1} + x_{2} + \cdots + x_{k+1}| \leq |x_{1}| + |x_{2}| + \cdots+ \ |x_{k+1}| 
+$$
+
+Definimos que: $S_{k} = x_{1} + x_{2} + \cdots +x_{k}$. Assim: $S_{k} + x_{k+1}$.
+
+Com a desigualdade triangular para qualquer $a, b \in \mathbb{R}$ 
+
+$$
+|a+b| \leq |a| + |b|
+$$
+
+Aplicando $S_{k}$ e $x_{k+1}$, temos: 
+
+$$
+| S_{k} + x_{k+1}| \leq |S_{k}| + |x_{k+1}|
+$$
+Assim: 
+
+$$
+| S_{k} + x_{k+1}| \leq (|x_{1}|+|x_{2}|+ \cdots + |x_{k}|) + |x_{k+1}|
+$$
+$$
+| x_{1} + x_{2} + \cdots + x_{k+1}| \leq |x_{1}| + |x_{2}| + \cdots+ \ |x_{k+1}|
+$$
+\newpage
+
+### 10. Prove que para todo ${x \in \mathbb{R}}$ tal que $x \geq -1$ vale a desigualdade  
+
+$$
+(1+x)^r \geq 1+rx, \space \forall r \in \mathbb{N}
+$$
+Podemos provar por indução. Tomando $r = 1$
+
+$$
+(1+x)^1 \geq 1+1x = (1+x) \geq (1+x)
+$$
+Tomando $r = k$ como hipótese de indução: 
+
+$$
+(1+x)^k \geq 1+kr
+$$
+
+Em $r = k+1$: 
+
+$$
+(1+x)^{k+1} \geq 1 + (k+1)x
+$$
+Pelas propriedades da potência, temos: 
+
+$$
+(1+x)^{k+1}  = (1+x)^k (1+x)
+$$
+Logo, temos: 
+
+
+$$
+(1+x)^k (1+x) \geq (1+kx)(1+x)
+$$
+
+
+$$
+(1 + kx)(1 + x) = 1 + x + kx + kx^2 = 1 + (k+1)x + kx^2.
+$$
+
+Como $kx^2 \geq 0$ para $x \geq -1$, temos:
+
+$$
+1 + (k+1)x + kx^2  \geq 1 + (k+1)x
+$$
+Portanto:
+
+$$
+(1 + x)^{k+1} \geq 1 + (k+1)x.
+$$
+
+### 4.Dados dois números naturais a, b mostre que existe natural m tal que ma > b.
+
+Ou seja, $a, b \in \mathbb{N}$ existe $m \in \mathbb{N}$ tal que $ma > b$ 
+
+Escolhendo um $m$ grande suficiente, $ma$ supera qualquer $b$. Como escolher $m$ suficientemente grande? 
+
+$$
+m = \frac{b}{a}+1
+$$
+
+Como a divisão $\frac{b}{a}$ mostra quantas vezes $a$ cabe dentro de $b$, adicionando mais 1 o produto $ma$ torna-se maior que $b$. Ou seja, isso prova que existe natural $m$ tal que $ma > b$. Ou seja: 
+
+$$
+ma > b 
+$$
+$$
+(\frac{b}{a} + 1) * a > b
+$$
+
+
+
+
+
