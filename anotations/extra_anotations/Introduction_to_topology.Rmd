@@ -1,0 +1,51 @@
+---
+title: "Notas de Aula: Para uma Introdução à Topologia"
+author: "Luiz Paulo Tavares Gonçalves"
+date: ""
+output: 
+  pdf_document:
+    number_sections: true
+    fig_caption: true
+fontsize: 12pt
+linestretch: 1.5
+geometry: a4paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A topologia tem como escopo estudar as propriedade dos espaços que permancem inalteradas sob deformações e transformações contínuas. O objeto central de estudo são os espaços topológicos. Porém,   
+
+Um métrica é uma forma de medir a distância entre pontos em um conjunto. 
+
+**Definição**: Seja $X$ um conjunto qualquer, uma métrica $d$ é uma função: 
+
+$$
+d: X \times X \to \mathbb{R}
+$$
+
+
+Que satisfaz as seguintes condições para $\forall x, y, z \in X$: 
+
+
+**i) Positividade:**
+
+$$
+d(x, y) \geq 0
+$$
+$$
+d(x, y) = 0 \iff x = y
+$$
+**ii) Simetria:**
+
+$$
+d(x, y) = d(y, x)
+$$
+**iii) Desigualdade Triangular:**
+
+$$
+d(x, z) \leq d(x, y) + d(y, z)
+$$
+
+
